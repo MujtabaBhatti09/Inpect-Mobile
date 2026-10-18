@@ -1,6 +1,13 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.USE_BIOMETRIC" />
+<!-- Needed so the app can see root/hook/remote-control/overlay apps (Android 11+ package visibility).
+     Fine for a personal diagnostic build; Google Play restricts this permission. -->
+<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+    tools:ignore="QueryAllPackagesPermission" />
 
     <application
       android:name=".MainApplication"
